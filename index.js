@@ -10,12 +10,12 @@ function playRound() {
     let array = ["rock", "paper", "scissors"];
     return array[Math.floor(Math.random() * 3)];
   }
+  //initialize necessary variables
   let result;
   let winner;
-  //compare the choices
   let playerSelection = userPlay();
   let computerSelection = computerPlay();
-
+  //compare the choices
   if (playerSelection === "rock" && computerSelection === "paper") {
     result = "You chose Rock, Computer chose Paper. You Lose. Paper beats Rock";
     winner = "comp";
@@ -56,6 +56,28 @@ function playRound() {
 }
 
 function game() {
-  let scoreHooman;
-  let scoreComp;
+  let scoreHooman = 0;
+  let scoreComp = 0;
+  let result;
+  while (scoreHooman < 3 && scoreComp < 3) {
+    let resultOfPlayRound = playRound();
+    if (resultOfPlayRound === "hooman") {
+      ++scoreHooman;
+    } else if (resultOfPlayRound === "comp") {
+      ++scoreComp;
+    } else {
+      scoreHooman += 0;
+      scoreComp += 0;
+    }
+  }
+  if (scoreHooman > scoreComp) {
+    result =
+      "You Win The Game! The score is " + scoreHooman + " : " + scoreComp;
+  } else {
+    result =
+      "You Lose The Game! The score is " + scoreHooman + " : " + scoreComp;
+  }
+  return result;
 }
+
+console.log(game());
