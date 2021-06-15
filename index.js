@@ -59,7 +59,7 @@ function game() {
   let scoreHooman = 0;
   let scoreComp = 0;
   let result;
-  while (scoreHooman < 3 && scoreComp < 3) {
+  while (scoreHooman < 5 && scoreComp < 5) {
     let resultOfPlayRound = playRound();
     if (resultOfPlayRound === "hooman") {
       ++scoreHooman;
