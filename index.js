@@ -1,5 +1,5 @@
 //the function to play a single round
-function playRound() {
+/*function playRound() {
   //user makes a choice
   function userPlay() {
     let choice = prompt("Make a choice (Rock, Paper, Scissor): ");
@@ -80,4 +80,4 @@ function game() {
   return result;
 }
 
-console.log(game());
+console.log(game());*/

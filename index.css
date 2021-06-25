@@ -1,0 +1,79 @@
+body {
+  background-color: grey;
+}
+#main-container {
+  height: 960px;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightskyblue;
+}
+#message {
+  display: flex;
+  flex-direction: row;
+  width: 850px;
+  height: 200px;
+}
+#text {
+  width: 75%;
+  background-color: blue;
+}
+#icon {
+  width: 25%;
+  background-color: green;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightseagreen;
+}
+#char-container {
+  background-color: limegreen;
+  width: 800px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.char {
+  background-color: olive;
+  width: 150px;
+  height: 150px;
+}
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  background-color: lightsalmon;
+}
+#you {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: magenta;
+}
+.you {
+  background-color: mistyrose;
+  width: 140px;
+  height: 140px;
+}
+#bosses {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: maroon;
+}
+.boss {
+  background-color: mediumpurple;
+  width: 140px;
+  height: 140px;
+}
