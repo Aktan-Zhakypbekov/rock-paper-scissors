@@ -1,5 +1,6 @@
 body {
-  background-color: grey;
+  background-image: url("https://cdn.wallpapersafari.com/94/66/th8vCL.jpg");
+  color: silver;
 }
 #main-container {
   height: 960px;
@@ -11,69 +12,87 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightskyblue;
 }
 #message {
+  border: 1px solid silver;
   display: flex;
   flex-direction: row;
   width: 850px;
   height: 200px;
 }
 #text {
+  background-color: rgb(4, 17, 4);
+  border: 1px solid silver;
   width: 75%;
-  background-color: blue;
 }
 #icon {
+  border: 1px solid silver;
   width: 25%;
-  background-color: green;
+}
+#wolf-img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+.char {
+  max-width: 100%;
+  max-height: 100%;
+}
+.boss-img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+.boss-img-spec {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightseagreen;
 }
 #char-container {
-  background-color: limegreen;
-  width: 800px;
+  background-color: rgb(13, 17, 1);
+  opacity: 0.8;
+  border: 1px solid silver;
+  width: 700px;
   height: 400px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   align-items: center;
   justify-items: center;
+  justify-content: space-around;
 }
 .char {
-  background-color: olive;
-  width: 150px;
-  height: 150px;
+  border: 1px solid silver;
+  width: 165px;
+  height: 165px;
 }
 #footer {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
-  background-color: lightsalmon;
 }
 #you {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: magenta;
 }
 .you {
-  background-color: mistyrose;
+  border: 1px solid silver;
   width: 140px;
   height: 140px;
 }
 #bosses {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  background-color: maroon;
 }
 .boss {
-  background-color: mediumpurple;
+  border: 1px solid silver;
   width: 140px;
   height: 140px;
 }

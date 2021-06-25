@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/017/899/278/large/artur-kordas-dw-trailer-kapliczka.jpg?1557776165");
 }
 #main-container {
   height: 960px;
@@ -10,10 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: orchid;
 }
 #message {
-  background-color: royalblue;
   display: flex;
   flex-direction: row;
   width: 850px;
@@ -21,26 +19,21 @@ body {
 }
 #text {
   width: 75%;
-  background-color: sandybrown;
 }
 #icon {
   width: 25%;
-  background-color: silver;
 }
 #main {
   display: grid;
   grid-template-rows: 1fr 2fr;
-  background-color: palegreen;
 }
 #choose {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: springgreen;
 }
 .rps {
-  background-color: yellow;
   width: 150px;
   height: 150px;
   margin: 0 25px;
@@ -49,36 +42,29 @@ body {
 #players {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  background-color: turquoise;
 }
 #choice {
-  background-color: blueviolet;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .choice {
-  background-color: cadetblue;
   width: 140px;
   height: 140px;
   margin: 0 120px;
 }
 .score {
-  background-color: rgb(25, 153, 153);
   width: 140px;
   height: 140px;
 }
 .player-img {
-  background-color: darkgreen;
   width: 140px;
   height: 140px;
   margin: 0 10px;
 }
 #score {
-  background-color: burlywood;
 }
 
 #footer {
-  background-color: pink;
 }
