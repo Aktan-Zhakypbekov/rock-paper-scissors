@@ -1,5 +1,6 @@
 body {
   background-image: url("https://cdnb.artstation.com/p/assets/images/images/018/665/751/large/artur-kordas-muzyk-00001.jpg?1560255198");
+  color: silver;
 }
 #main-container {
   height: 960px;
@@ -12,7 +13,7 @@ body {
   align-items: center;
 }
 #message {
-  border: 1px solid silver;
+  border: 1px solid grey;
 
   display: flex;
   flex-direction: row;
@@ -20,11 +21,13 @@ body {
   height: 200px;
 }
 #text {
-  border: 1px solid silver;
+  border: 1px solid grey;
   width: 75%;
+  background-color: rgb(12, 11, 1);
+  opacity: 0.8;
 }
 #icon {
-  border: 1px solid silver;
+  border: 1px solid grey;
   width: 25%;
 }
 #main {
@@ -32,52 +35,79 @@ body {
   grid-template-rows: 1fr 2fr;
 }
 #choose {
-  border: 1px solid silver;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .rps {
-  border: 1px solid silver;
+  border: 1px solid grey;
   width: 150px;
   height: 150px;
   margin: 0 25px;
+  background-color: rgb(0, 12, 0);
+  opacity: 0.8;
+}
+.rps:hover {
+  transform: scale(1.05);
+  border-color: silver;
+  box-shadow: 0 0 3px white;
 }
 
 #players {
-  border: 1px solid silver;
   display: grid;
   grid-template-rows: 1fr 1fr;
 }
 #choice {
-  border: 1px solid silver;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .choice {
-  border: 1px solid silver;
+  border: 1px solid grey;
   width: 140px;
   height: 140px;
   margin: 0 120px;
+  background-color: rgb(0, 12, 0);
+  opacity: 0.8;
 }
 .score {
-  border: 1px solid silver;
+  border: 1px solid grey;
   width: 140px;
   height: 140px;
+  background-color: rgb(0, 2, 0);
+  opacity: 0.9;
 }
 .player-img {
-  border: 1px solid silver;
+  border: 1px solid grey;
   width: 140px;
   height: 140px;
   margin: 0 10px;
+  background-color: rgb(0, 2, 0);
+  opacity: 0.9;
 }
 #score {
-  border: 1px solid silver;
+  border: 1px solid grey;
 }
 
 #footer {
-  border: 1px solid silver;
+}
+
+#boss1-icon {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+#boss1-img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+#rock-img,
+#paper-img,
+#scissors-img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
 }

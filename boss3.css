@@ -1,5 +1,6 @@
 body {
   background-image: url("https://cdna.artstation.com/p/assets/images/images/018/665/754/large/artur-kordas-kosciol-00000.jpg?1560255202");
+  color: silver;
 }
 #main-container {
   height: 960px;
@@ -16,12 +17,17 @@ body {
   flex-direction: row;
   width: 850px;
   height: 200px;
+  border: 1px solid grey;
 }
 #text {
   width: 75%;
+  border: 1px solid grey;
+  background-color: rgb(1, 1, 17);
+  opacity: 0.9;
 }
 #icon {
   width: 25%;
+  border: 1px solid grey;
 }
 #main {
   display: grid;
@@ -37,6 +43,13 @@ body {
   width: 150px;
   height: 150px;
   margin: 0 25px;
+  border: 1px solid grey;
+  background-color: rgb(0, 12, 0);
+}
+.rps:hover {
+  transform: scale(1.05);
+  border-color: silver;
+  box-shadow: 0 0 3px white;
 }
 
 #players {
@@ -53,18 +66,46 @@ body {
   width: 140px;
   height: 140px;
   margin: 0 120px;
+  border: 1px solid grey;
+  background-color: rgb(0, 12, 0);
+  opacity: 0.9;
 }
 .score {
   width: 140px;
   height: 140px;
+  border: 1px solid grey;
+  background-color: rgb(0, 2, 0);
+  opacity: 0.9;
 }
 .player-img {
   width: 140px;
   height: 140px;
   margin: 0 10px;
+  border: 1px solid grey;
+  background-color: rgb(0, 2, 0);
+  opacity: 0.9;
 }
 #score {
+  border: 1px solid grey;
 }
 
 #footer {
+}
+
+#boss3-icon {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+#boss3-img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+#rock-img,
+#paper-img,
+#scissors-img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
 }
