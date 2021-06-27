@@ -1,6 +1,9 @@
 body {
   background-image: url("https://cdnb.artstation.com/p/assets/images/images/018/665/751/large/artur-kordas-muzyk-00001.jpg?1560255198");
   color: silver;
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 21px;
 }
 #main-container {
   height: 960px;

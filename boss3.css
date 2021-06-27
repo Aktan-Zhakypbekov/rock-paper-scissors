@@ -1,6 +1,9 @@
 body {
   background-image: url("https://cdna.artstation.com/p/assets/images/images/018/665/754/large/artur-kordas-kosciol-00000.jpg?1560255202");
   color: silver;
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 21px;
 }
 #main-container {
   height: 960px;

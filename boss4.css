@@ -1,6 +1,9 @@
 body {
   background-image: url("https://cdnb.artstation.com/p/assets/images/images/017/899/241/large/artur-kordas-dw-trailer-drzewo.jpg?1557776011");
   color: silver;
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 21px;
 }
 #main-container {
   height: 960px;

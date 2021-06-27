@@ -81,3 +81,36 @@ function game() {
 }
 
 console.log(game());*/
+
+function displayText() {
+  let theTextPlace = document.getElementById("text");
+  let theText = ` - Hello meat, you are now in the darkwood, a strange place that consumed the once live world. The only way for you 
+  to get out of here is to play a game. It is simple, but it doesn't mean it will be easy. First, choose your character. Then,
+  look at the bottom, there are four bosses - beat all of them. Remember, you are playing a challenging and unforgiving game. You will not be led by the hand. 
+  Respect the woods. Be patient. Focus.`;
+  let i = 0;
+  let place = "";
+  function typingEffect() {
+    if (i < theText.length) {
+      theTextPlace.textContent += theText.charAt(i);
+      i++;
+      setTimeout(typingEffect, 10);
+    }
+  }
+  theTextPlace.addEventListener("click", typingEffect);
+}
+displayText();
+
+let youImg = document.querySelector("#youImg");
+
+let charImage = document.querySelectorAll(".char");
+for (let i = 0; i < charImage.length; i++) {
+  charImage[i].addEventListener("click", () => {
+    youImg.src = charImage[i].src;
+  });
+}
+
+let charImageSpecial = document.querySelector(".char-special");
+charImageSpecial.addEventListener("click", () => {
+  youImg.src = charImageSpecial.src;
+});
