@@ -81,6 +81,9 @@ body {
   height: 140px;
   background-color: rgb(0, 2, 0);
   opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .player-img {
   border: 1px solid grey;
@@ -92,6 +95,8 @@ body {
 }
 #score {
   border: 1px solid grey;
+  background-color: rgb(15, 5, 5);
+  opacity: 0.8;
 }
 
 #footer {
@@ -113,4 +118,25 @@ body {
   max-width: 100%;
   max-height: 100%;
   min-height: 100%;
+}
+#choiceHoomanImg {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+#choiceCompImg {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+#youImg {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+#scoreHooman {
+  font-size: 60px;
+}
+#scoreComp {
+  font-size: 60px;
 }
