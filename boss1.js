@@ -12,30 +12,38 @@ function typingEffect() {
 }
 theTextPlace.addEventListener("click", typingEffect);
 
-//the function to play a single round
-function playRound() {
-  //user makes a choice
-  function userPlay() {
-    let choice = prompt("Enter your choice: ");
-    //let rpsIcon = document.querySelectorAll(".rpsImg");
-    //for (let i = 0; i < rpsIcon.length; i++) {
-    //  rpsIcon[i].addEventListener("click", () => {
-    //    choice = rpsIcon[i].id;
-    //  });
-    return choice;
-  }
-  //computer makes a choice
-  function computerPlay() {
-    let array = ["rock", "paper", "scissors"];
-    return array[Math.floor(Math.random() * 3)];
-  }
+let finalMessage = document.querySelector("#finalResultMessage");
+let scoreHoomanDiv = document.querySelector("#scoreHooman");
+let scoreCompDiv = document.querySelector("#scoreComp");
+let scoreHooman = 0;
+let scoreComp = 0;
 
-  //initialize necessary variables
-  let result;
+let playerSelection;
+let rpsIcons = document.querySelectorAll(".rpsImg");
+rpsIcons.forEach((rpsIcon) => {
+  rpsIcon.addEventListener("click", (event) => {
+    playerSelection = rpsIcon.id;
+    while (scoreHooman < 5 && scoreComp < 5) {
+      game();
+      if (scoreHooman > scoreComp) {
+        finalMessage.innerHTML =
+          "You Win! <button class='replay-button'>Replay</button> or <a href='boss2.html'>Next Boss</a>";
+      } else {
+        finalMessage.innerHTML =
+          "You Lose. <button class='replay-button'>Replay</button>";
+      }
+    }
+  });
+});
+
+function computerPlay() {
+  let array = ["rock", "paper", "scissors"];
+  return array[Math.floor(Math.random() * 3)];
+}
+
+function playRound() {
   let winner;
-  let playerSelection = userPlay();
   let computerSelection = computerPlay();
-  //compare the choices
   if (playerSelection === "rock" && computerSelection === "paper") {
     winner = "comp";
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -59,37 +67,19 @@ function playRound() {
     winner = "tie";
   }
   let hoomanChoice = document.querySelector("#choiceHoomanImg");
-  hoomanChoice.src = document.getElementById(playerSelection + "-img").src;
+  hoomanChoice.src = document.getElementById(playerSelection).src;
   let compChoice = document.querySelector("#choiceCompImg");
-  compChoice.src = document.getElementById(computerSelection + "-img").src;
+  compChoice.src = document.getElementById(computerSelection).src;
   return winner;
 }
 
 function game() {
-  let finalMessage = document.querySelector("#finalResultMessage");
-  let scoreHooman = 0;
-  let scoreComp = 0;
-  let scoreHoomanDiv = document.querySelector("#scoreHooman");
-  let scoreCompDiv = document.querySelector("#scoreComp");
-  while (scoreHooman < 1 && scoreComp < 1) {
-    let resultOfPlayRound = playRound();
-    if (resultOfPlayRound === "hooman") {
-      ++scoreHooman;
-      scoreHoomanDiv.textContent = scoreHooman;
-    } else if (resultOfPlayRound === "comp") {
-      ++scoreComp;
-      scoreCompDiv.textContent = scoreComp;
-    } else {
-      scoreHooman += 0;
-      scoreComp += 0;
-    }
-  }
-  if (scoreHooman > scoreComp) {
-    finalMessage.textContent =
-      "You Win The Game! The score is " + scoreHooman + " : " + scoreComp;
-  } else {
-    finalMessage.textContent =
-      "You Lose The Game! The score is " + scoreHooman + " : " + scoreComp;
+  let resultOfPlayRound = playRound();
+  if (resultOfPlayRound === "hooman") {
+    ++scoreHooman;
+    scoreHoomanDiv.textContent = scoreHooman;
+  } else if (resultOfPlayRound === "comp") {
+    ++scoreComp;
+    scoreCompDiv.textContent = scoreComp;
   }
 }
-game();

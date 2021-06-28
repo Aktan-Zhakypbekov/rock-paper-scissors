@@ -17,7 +17,7 @@ function playRound() {
   //user makes a choice
   function userPlay() {
     let choice = prompt("Enter your choice: ");
-    //let rpsIcon = document.querySelectorAll(".rpsImg");
+    l; //et rpsIcon = document.querySelectorAll(".rpsImg");
     //for (let i = 0; i < rpsIcon.length; i++) {
     //  rpsIcon[i].addEventListener("click", () => {
     //    choice = rpsIcon[i].id;
