@@ -21,16 +21,17 @@ let scoreComp = 0;
 let playerSelection;
 let rpsIcons = document.querySelectorAll(".rpsImg");
 rpsIcons.forEach((rpsIcon) => {
-  rpsIcon.addEventListener("click", (event) => {
+  rpsIcon.addEventListener("click", function game(event) {
     playerSelection = rpsIcon.id;
-    while (scoreHooman < 5 && scoreComp < 5) {
-      game();
+    playRound();
+    if (scoreHooman === 3 || scoreComp === 3) {
+      rpsIcons.forEach((rpsIcon) => {
+        rpsIcon.remove();
+      });
       if (scoreHooman > scoreComp) {
-        finalMessage.innerHTML =
-          "You Win! <button class='replay-button'>Replay</button> or <a href='boss2.html'>Next Boss</a>";
+        finalMessage.innerHTML = `-No! That can't be! You won. What will I now make my strings from? Go to the <a href='boss2.html' style='color:white'>next boss</a> or `;
       } else {
-        finalMessage.innerHTML =
-          "You Lose. <button class='replay-button'>Replay</button>";
+        finalMessage.innerHTML = `-Ha-ha-HA-hA! You lost! You're mine now!`;
       }
     }
   });
@@ -40,46 +41,46 @@ function computerPlay() {
   let array = ["rock", "paper", "scissors"];
   return array[Math.floor(Math.random() * 3)];
 }
+function replay() {
+  window.location.reload();
+}
+
+let replayButton = document.querySelector("#replay-button");
+replayButton.addEventListener("click", replay);
 
 function playRound() {
   let winner;
   let computerSelection = computerPlay();
   if (playerSelection === "rock" && computerSelection === "paper") {
-    winner = "comp";
+    scoreComp++;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    winner = "hooman";
+    scoreHooman++;
   } else if (playerSelection === "rock" && computerSelection === "rock") {
-    winner = "tie";
+    scoreComp += 0;
+    scoreHooman += 0;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    winner = "hooman";
+    scoreHooman++;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    winner = "comp";
+    scoreComp++;
   } else if (playerSelection === "paper" && computerSelection === "paper") {
-    winner = "tie";
+    scoreHooman += 0;
+    scoreComp += 0;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    winner = "comp";
+    scoreComp++;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    winner = "hooman";
+    scoreHooman++;
   } else if (
     playerSelection === "scissors" &&
     computerSelection === "scissors"
   ) {
-    winner = "tie";
+    scoreHooman += 0;
+    scoreComp += 0;
   }
   let hoomanChoice = document.querySelector("#choiceHoomanImg");
   hoomanChoice.src = document.getElementById(playerSelection).src;
   let compChoice = document.querySelector("#choiceCompImg");
   compChoice.src = document.getElementById(computerSelection).src;
-  return winner;
-}
 
-function game() {
-  let resultOfPlayRound = playRound();
-  if (resultOfPlayRound === "hooman") {
-    ++scoreHooman;
-    scoreHoomanDiv.textContent = scoreHooman;
-  } else if (resultOfPlayRound === "comp") {
-    ++scoreComp;
-    scoreCompDiv.textContent = scoreComp;
-  }
+  scoreHoomanDiv.textContent = scoreHooman;
+  scoreCompDiv.textContent = scoreComp;
 }
