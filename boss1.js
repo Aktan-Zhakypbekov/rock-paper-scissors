@@ -29,7 +29,7 @@ rpsIcons.forEach((rpsIcon) => {
         rpsIcon.remove();
       });
       if (scoreHooman > scoreComp) {
-        finalMessage.innerHTML = `-No! That can't be! You won. What will I now make my strings from? Go to the <a href='boss2.html' style='color:white'>next boss</a> or `;
+        finalMessage.innerHTML = `-No! That can't be! You won. What will I now make my strings from? Go to the <a href='boss2.html' style='color:white'>next boss</a> or`;
       } else {
         finalMessage.innerHTML = `-Ha-ha-HA-hA! You lost! You're mine now!`;
       }

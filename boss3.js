@@ -28,7 +28,7 @@ rpsIcons.forEach((rpsIcon) => {
         rpsIcon.remove();
       });
       if (scoreHooman > scoreComp) {
-        finalMessage.innerHTML = `-NHhhoouu...???my??? m??eat??? Go to the <a href='boss2.html' style='color:white'>next boss</a> or`;
+        finalMessage.innerHTML = `-NHhhoouu...???my??? m??eat??? Go to the <a href='boss4.html' style='color:white'>next boss</a> or`;
       } else {
         finalMessage.innerHTML = `-???Eat??? ???eat???? ???eat?? ??him??`;
       }

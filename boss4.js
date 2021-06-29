@@ -12,83 +12,75 @@ function typingEffect() {
 }
 theTextPlace.addEventListener("click", typingEffect);
 
-//the function to play a single round
-function playRound() {
-  //user makes a choice
-  function userPlay() {
-    let choice = prompt("Enter your choice: ");
-    //let rpsIcon = document.querySelectorAll(".rpsImg");
-    //for (let i = 0; i < rpsIcon.length; i++) {
-    //  rpsIcon[i].addEventListener("click", () => {
-    //    choice = rpsIcon[i].id;
-    //  });
-    return choice;
-  }
-  //computer makes a choice
-  function computerPlay() {
-    let array = ["rock", "paper", "scissors"];
-    return array[Math.floor(Math.random() * 3)];
-  }
+let finalMessage = document.querySelector("#finalResultMessage");
+let scoreHoomanDiv = document.querySelector("#scoreHooman");
+let scoreCompDiv = document.querySelector("#scoreComp");
+let scoreHooman = 0;
+let scoreComp = 0;
 
-  //initialize necessary variables
-  let result;
+let playerSelection;
+let rpsIcons = document.querySelectorAll(".rpsImg");
+rpsIcons.forEach((rpsIcon) => {
+  rpsIcon.addEventListener("click", function game(event) {
+    playerSelection = rpsIcon.id;
+    playRound();
+    if (scoreHooman === 3 || scoreComp === 3) {
+      rpsIcons.forEach((rpsIcon) => {
+        rpsIcon.remove();
+      });
+      if (scoreHooman > scoreComp) {
+        finalMessage.innerHTML = `-You won. But does it mean you'll get to your home? Don't worry I won't touch you. From now on, you will build your own path. Maybe you will find your home, or maybe, when in despair, you will become  a part of the darkwood, like us. Goodbye.`;
+      } else {
+        finalMessage.innerHTML = `-You lost. Just like the hundreds before you. You are my dinner.`;
+      }
+    }
+  });
+});
+
+function computerPlay() {
+  let array = ["rock", "paper", "scissors"];
+  return array[Math.floor(Math.random() * 3)];
+}
+function replay() {
+  window.location.reload();
+}
+
+let replayButton = document.querySelector("#replay-button");
+replayButton.addEventListener("click", replay);
+
+function playRound() {
   let winner;
-  let playerSelection = userPlay();
   let computerSelection = computerPlay();
-  //compare the choices
   if (playerSelection === "rock" && computerSelection === "paper") {
-    winner = "comp";
+    scoreComp++;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    winner = "hooman";
+    scoreHooman++;
   } else if (playerSelection === "rock" && computerSelection === "rock") {
-    winner = "tie";
+    scoreComp += 0;
+    scoreHooman += 0;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    winner = "hooman";
+    scoreHooman++;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    winner = "comp";
+    scoreComp++;
   } else if (playerSelection === "paper" && computerSelection === "paper") {
-    winner = "tie";
+    scoreHooman += 0;
+    scoreComp += 0;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    winner = "comp";
+    scoreComp++;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    winner = "hooman";
+    scoreHooman++;
   } else if (
     playerSelection === "scissors" &&
     computerSelection === "scissors"
   ) {
-    winner = "tie";
+    scoreHooman += 0;
+    scoreComp += 0;
   }
   let hoomanChoice = document.querySelector("#choiceHoomanImg");
-  hoomanChoice.src = document.getElementById(playerSelection + "-img").src;
+  hoomanChoice.src = document.getElementById(playerSelection).src;
   let compChoice = document.querySelector("#choiceCompImg");
-  compChoice.src = document.getElementById(computerSelection + "-img").src;
-  return winner;
-}
+  compChoice.src = document.getElementById(computerSelection).src;
 
-function game() {
-  let finalMessage = document.querySelector("#finalResultMessage");
-  let scoreHooman = 0;
-  let scoreComp = 0;
-  let scoreHoomanDiv = document.querySelector("#scoreHooman");
-  let scoreCompDiv = document.querySelector("#scoreComp");
-  while (scoreHooman < 1 && scoreComp < 1) {
-    let resultOfPlayRound = playRound();
-    if (resultOfPlayRound === "hooman") {
-      ++scoreHooman;
-      scoreHoomanDiv.textContent = scoreHooman;
-    } else if (resultOfPlayRound === "comp") {
-      ++scoreComp;
-      scoreCompDiv.textContent = scoreComp;
-    } else {
-      scoreHooman += 0;
-      scoreComp += 0;
-    }
-  }
-  if (scoreHooman > scoreComp) {
-    finalMessage.textContent =
-      "You Win The Game! The score is " + scoreHooman + " : " + scoreComp;
-  } else {
-    finalMessage.textContent =
-      "You Lose The Game! The score is " + scoreHooman + " : " + scoreComp;
-  }
+  scoreHoomanDiv.textContent = scoreHooman;
+  scoreCompDiv.textContent = scoreComp;
 }

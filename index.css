@@ -56,6 +56,7 @@ body {
 .boss-img-spec {
   max-width: 100%;
   max-height: 100%;
+  min-height: 100%;
 }
 
 #main {
@@ -135,6 +136,12 @@ body {
   transform: scale(1.05);
   border-color: silver;
   box-shadow: 0 0 3px white;
+  cursor: pointer;
+}
+.boss:hover div {
+  visibility: visible;
+  opacity: 0.7;
+  text-shadow: 0 0 3px silver;
 }
 .boss-img {
   opacity: 0.15;
@@ -142,6 +149,10 @@ body {
 .boss-img:hover {
   opacity: 1;
 }
+.boss-img-spec {
+  opacity: 0;
+}
+
 .you {
   position: relative;
   background-color: black;
